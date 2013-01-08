@@ -2,3 +2,4 @@ source/
 workdir/
 packages/
 VERSION
+.Rakefile.swp
