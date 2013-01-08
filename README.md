@@ -14,3 +14,11 @@ Source: https://neon1.net/as-stats/
 * upstart job
 * defaults file
 * Net::sFlow Perl module
+
+# Usage
+
+You need rake! =)
+
+* rake clean: remove all created dirs
+* rake prepare[1.36]: downloads and prepares as-stats version 1.36
+* rake buld: creates debian package
