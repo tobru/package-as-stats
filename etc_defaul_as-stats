@@ -1,0 +1,5 @@
+# Defaults for as-stats
+RRD_DIR="/var/lib/as-stats/rrd"
+LISTEN_PORT="6343"
+AS=""
+SAMPLING="512"

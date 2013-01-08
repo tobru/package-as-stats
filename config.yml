@@ -1,1 +1,7 @@
 package_url: 'https://neon1.net/as-stats'
+package_name: 'as-stats'
+package_config_files: 'etc/as-stats/knownlinks'
+package_description: 'a simple tool to generate per-AS traffic graphs from NetFlow/sFlow records'
+package_deps: 'upstart'
+package_website: 'https://neon1.net/as-stats'
+perl_net_sflow_src: 'http://cpansearch.perl.org/src/ELISA/Net-sFlow-0.11/sFlow.pm'

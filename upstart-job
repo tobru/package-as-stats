@@ -1,0 +1,17 @@
+# as-stats - generate per-AS traffic graphs from NetFlow/sFlow records
+#
+# a simple tool to generate per-AS traffic graphs from NetFlow/sFlow records
+# by Manuel Kasper, Monzoon Networks AG <mkasper@monzoon.net>
+
+description "as-stats"
+author "Tobias Brunner <tobias@tobru.ch>"
+
+start on runlevel [2345]
+stop on runlevel [06]
+
+respawn
+
+script
+    . /etc/default/as-stats
+    exec /usr/local/bin/sflow-asstatd.pl -r $RRD_DIR -p $LISTEN_PORT -k /etc/as-stats/knownlinks -a $AS -s $SAMPLING
+end script
