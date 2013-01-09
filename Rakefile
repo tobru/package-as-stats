@@ -42,13 +42,16 @@ desc 'Build the package'
 task :build do
   config = YAML.load_file('config.yml')
 
+  version = File.read('VERSION').strip
+  version += "-#{ENV['BUILD_NUMBER']}" if ENV['BUILD_NUMBER']
+
   Dir.chdir 'workdir'
   sh "fpm \
 -s dir \
 -t deb \
 -n #{config['package_name']} \
 --prefix / \
--v $(cat ../VERSION) \
+-v #{version} \
 -d #{config['package_deps']} \
 --config-files #{config['package_config_files']} \
 -a all \
@@ -57,7 +60,7 @@ task :build do
 ."
 
   Dir.chdir '..'
-  sh 'cp workdir/as-stats_$(cat VERSION)_all.deb packages/'
+  sh "cp workdir/as-stats_#{version}_all.deb packages/"
 
 end
 
