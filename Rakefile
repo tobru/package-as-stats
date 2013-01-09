@@ -33,8 +33,8 @@ task :prepare, [:version] do |task,args|
   FileUtils.cp_r "source/as-stats-v#{args.version}/contrib/", "workdir/usr/share/doc/as-stats"
   FileUtils.cp "source/as-stats-v#{args.version}/README", "workdir/usr/share/doc/as-stats"
   FileUtils.cp "source/sFlow.pm", "workdir/usr/lib/perl5/Net"
-  FileUtils.cp "upstart-job", "workdir/etc/init/as-stats.conf"
-  FileUtils.cp "etc_defaul_as-stats", "workdir/etc/default/as-stats"
+  FileUtils.cp "scripts/upstart-job", "workdir/etc/init/as-stats.conf"
+  FileUtils.cp "scripts/defaults", "workdir/etc/default/as-stats"
 
 end
 
