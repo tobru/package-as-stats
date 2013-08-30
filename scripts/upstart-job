@@ -13,5 +13,5 @@ respawn
 
 script
     . /etc/default/as-stats
-    exec /usr/local/bin/sflow-asstatd.pl -r $RRD_DIR -p $LISTEN_PORT -k /etc/as-stats/knownlinks -a $AS -s $SAMPLING
+    exec su -s /bin/sh -c 'exec "$0" "$@"' $USER -- exec /usr/local/bin/sflow-asstatd.pl -r $RRD_DIR -p $LISTEN_PORT -k /etc/as-stats/knownlinks -a $AS -s $SAMPLING
 end script

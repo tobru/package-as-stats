@@ -22,4 +22,3 @@ Source: https://neon1.net/as-stats/
 * rake clean: remove all created dirs
 * rake prepare[1.36]: downloads and prepares as-stats version 1.36
 * rake build: creates debian package
-
